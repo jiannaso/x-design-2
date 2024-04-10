@@ -1,0 +1,766 @@
+[
+  {
+    "section": 3,
+    "wobbleIntensity": 81,
+    "thickness": 60,
+    "color": "#767f92",
+    "posx": -3.481,
+    "posy": -2.085,
+    "posz": -0.582,
+    "text": "apple"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 3,
+    "thickness": 10,
+    "color": "#9e4f4b",
+    "posx": -0.347,
+    "posy": 2.837,
+    "posz": -0.25,
+    "text": "table"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 22,
+    "thickness": 4,
+    "color": "#577a7b",
+    "posx": -1.936,
+    "posy": -2.767,
+    "posz": 4.043,
+    "text": "dog"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 36,
+    "thickness": 78,
+    "color": "#61725b",
+    "posx": 4.009,
+    "posy": 0.978,
+    "posz": -0.223,
+    "text": "bird"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 89,
+    "thickness": 20,
+    "color": "pink",
+    "posx": -3.92,
+    "posy": -3.274,
+    "posz": -3.628,
+    "text": "chair"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 81,
+    "thickness": 73,
+    "color": "#7f6f6e",
+    "posx": 0.991,
+    "posy": 1.864,
+    "posz": -2.031,
+    "text": "cat"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 38,
+    "thickness": 84,
+    "color": "#677b94",
+    "posx": 1.49,
+    "posy": -4.439,
+    "posz": -3.236,
+    "text": "book"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 32,
+    "thickness": 23,
+    "color": "#yellow",
+    "posx": -3.557,
+    "posy": -3.593,
+    "posz": 1.306,
+    "text": "pen"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 52,
+    "thickness": 73,
+    "color": "#717363",
+    "posx": -3.021,
+    "posy": -1.97,
+    "posz": 4.511,
+    "text": "tree"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 53,
+    "thickness": 74,
+    "color": "#816257",
+    "posx": -3.368,
+    "posy": 4.155,
+    "posz": -0.494,
+    "text": "lamp"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 96,
+    "thickness": 57,
+    "color": "#847b83",
+    "posx": -4.084,
+    "posy": 4.86,
+    "posz": 4.174,
+    "text": "flower"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 68,
+    "thickness": 76,
+    "color": "#846751",
+    "posx": -0.314,
+    "posy": -2.678,
+    "posz": -2.37,
+    "text": "house"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 32,
+    "thickness": 89,
+    "color": "#9a6e5f",
+    "posx": -3.166,
+    "posy": -0.583,
+    "posz": -0.425,
+    "text": "cup"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 79,
+    "thickness": 24,
+    "color": "#4e757c",
+    "posx": 4.05,
+    "posy": 0.499,
+    "posz": -0.887,
+    "text": "computer"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 54,
+    "thickness": 63,
+    "color": "#88755d",
+    "posx": 1.017,
+    "posy": -0.309,
+    "posz": 2.816,
+    "text": "moon"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 72,
+    "thickness": 91,
+    "color": "#6d6a51",
+    "posx": 2.573,
+    "posy": -0.394,
+    "posz": -1.122,
+    "text": "sun"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 84,
+    "thickness": 96,
+    "color": "#846453",
+    "posx": -3.998,
+    "posy": -0.261,
+    "posz": -0.196,
+    "text": "chair"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 36,
+    "thickness": 5,
+    "color": "#826e4a",
+    "posx": -4.195,
+    "posy": 1.7,
+    "posz": -4.472,
+    "text": "lamp"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 29,
+    "thickness": 70,
+    "color": "#7e5846",
+    "posx": 3.646,
+    "posy": 4.554,
+    "posz": 0.83,
+    "text": "dog"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 80,
+    "thickness": 42,
+    "color": "#807f70",
+    "posx": -0.288,
+    "posy": -0.716,
+    "posz": 3.547,
+    "text": "book"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 12,
+    "thickness": 67,
+    "color": "#847b69",
+    "posx": -0.787,
+
+
+    "posy": 2.715,
+    "posz": -0.41,
+    "text": "cup"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 58,
+    "thickness": 53,
+    "color": "#937258",
+    "posx": 4.66,
+    "posy": -2.354,
+    "posz": -4.332,
+    "text": "flower"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 47,
+    "thickness": 47,
+    "color": "#6c866a",
+    "posx": -4.451,
+    "posy": 3.971,
+    "posz": -0.69,
+    "text": "moon"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 55,
+    "thickness": 91,
+    "color": "#7b6b7e",
+    "posx": 2.791,
+    "posy": -4.746,
+    "posz": -2.291,
+    "text": "pen"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 87,
+    "thickness": 66,
+    "color": "#7f7263",
+    "posx": 0.566,
+    "posy": 1.685,
+    "posz": -3.569,
+    "text": "bird"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 28,
+    "thickness": 28,
+    "color": "#7f4d65",
+    "posx": -2.064,
+    "posy": -4.835,
+    "posz": -3.663,
+    "text": "tree"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 85,
+    "thickness": 65,
+    "color": "#787b63",
+    "posx": -3.646,
+    "posy": -2.046,
+    "posz": 0.13,
+    "text": "chair"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 59,
+    "thickness": 76,
+    "color": "#9c846c",
+    "posx": -3.343,
+    "posy": -0.506,
+    "posz": 1.151,
+    "text": "flower"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 21,
+    "thickness": 98,
+    "color": "#8f5d4b",
+    "posx": -0.387,
+    "posy": -0.768,
+    "posz": -4.662,
+    "text": "cup"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 51,
+    "thickness": 71,
+    "color": "#6f857b",
+    "posx": 1.228,
+    "posy": -1.234,
+    "posz": 2.994,
+    "text": "tree"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 8,
+    "thickness": 76,
+    "color": "#7a727b",
+    "posx": 1.042,
+    "posy": 0.9,
+    "posz": 0.64,
+    "text": "dog"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 78,
+    "thickness": 21,
+    "color": "#a37e52",
+    "posx": 3.112,
+    "posy": -2.198,
+    "posz": 0.566,
+    "text": "pen"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 44,
+    "thickness": 21,
+    "color": "#827f70",
+    "posx": -2.543,
+    "posy": 3.994,
+    "posz": -1.677,
+    "text": "flower"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 49,
+    "thickness": 33,
+    "color": "#7f6f7a",
+    "posx": -1.413,
+    "posy": -2.51,
+    "posz": 2.025,
+    "text": "cat"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 40,
+    "thickness": 97,
+    "color": "#847b5f",
+    "posx": 2.816,
+    "posy": 0.732,
+    "posz": 1.238,
+    "text": "sun"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 96,
+    "thickness": 47,
+    "color": "#8d5a4e",
+    "posx": -0.378,
+    "posy": 1.005,
+    "posz": 1.834,
+    "text": "tree"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 22,
+    "thickness": 58,
+    "color": "#847c61",
+    "posx": -0.615,
+    "posy": -0.951,
+    "posz": 2.801,
+    "text": "sun"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 89,
+    "thickness": 73,
+    "color": "#81615c",
+    "posx": 1.299,
+    "posy": 2.936,
+    "posz": -2.206,
+    "text": "cat"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 67,
+    "thickness": 10,
+    "color": "#7f876c",
+    "posx": -4.178,
+    "posy": -0.239,
+    "posz": -3.904,
+    "text": "table"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 83,
+    "thickness": 63,
+    "color": "#826a5c",
+    "posx": -1.174,
+    "posy": -2.788,
+    "posz": -0.827,
+    "text": "flower"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 70,
+    "thickness": 88,
+    "color": "#88705f",
+    "posx": 0.742,
+    "posy": -4.56,
+    "posz": -2.232,
+    "text": "sun"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 44,
+    "thickness": 19,
+    "color": "#7a8155",
+    "posx": -0.536,
+    "posy": -3.722,
+    "posz": -1.6,
+    "text": "bird"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 84,
+    "thickness": 88,
+    "color": "#827c7f",
+    "posx": -4.596,
+    "posy": 3.378,
+    "posz": -2.927,
+    "text": "pen"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 9,
+    "thickness": 19,
+    "color": "#826957",
+    "posx": 1.86,
+    "posy": -0.315,
+    "posz": -1.2,
+    "text": "book"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 70,
+    "thickness": 13,
+    "color": "#947c61",
+    "posx": -4.097,
+    "posy": 2.464,
+    "posz": 1.1,
+    "text": "dog"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 11,
+    "thickness": 85,
+    "color": "#8f5b63",
+    "posx": 4.32,
+    "posy": -2.163,
+    "posz": -1.123,
+    "text": "bird"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 17,
+    "thickness": 23,
+    "color": "#846d66",
+    "posx": -0.424,
+    "posy": 3.445,
+    "posz": -1.798,
+    "text": "cup"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 50,
+    "thickness": 68,
+    "color": "#746e81",
+    "posx": 1.224,
+    "posy": 0.491,
+    "posz": -0.204,
+    "text": "dog"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 74,
+    "thickness": 60,
+    "color": "#847b4e",
+    "posx": -0.309,
+    "posy": 2.929,
+    "posz": -0.035,
+    "text": "moon"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 78,
+    "thickness": 57,
+    "color": "#887e7d",
+    "posx": 4.731,
+    "posy": -1.283,
+    "posz": 3.932,
+    "text": "house"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 10,
+    "thickness": 73,
+    "color": "#767d5d",
+    "posx": 0.93,
+    "posy": -2.207,
+    "posz": 3.009,
+    "text": "chair"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 22,
+    "thickness": 65,
+    "color": "#93776c",
+    "posx": 2.829,
+    "posy": 4.142,
+    "posz": -3.375,
+    "text": "sun"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 85,
+    "thickness": 80,
+    "color": "#84656d",
+    "posx": 2.601,
+    "posy": -0.12,
+    "posz": 0.842,
+    "text": "cat"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 57,
+    "thickness": 3,
+    "color": "#7f7353",
+    "posx": -1.481,
+    "posy": -4.774,
+    "posz": -4.306,
+    "text": "pen"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 88,
+    "thickness": 18,
+    "color": "#8a6459",
+    "posx": -2.361,
+    "posy": 1.036,
+    "posz": 3.948,
+    "text": "bird"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 62,
+    "thickness": 85,
+    "color": "#91795b",
+    "posx": 0.12,
+    "posy": -1.315,
+    "posz": -1.646,
+    "text": "table"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 91,
+    "thickness": 41,
+    "color": "#81775f",
+    "posx": 2.032,
+    "posy": 0.791,
+    "posz": 4.055,
+    "text": "book"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 80,
+    "thickness": 65,
+    "color": "#8a774f",
+    "posx": 0.682,
+    "posy": -2.107,
+    "posz": 2.447,
+    "text": "flower"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 26,
+    "thickness": 60,
+    "color": "#9b5b5a",
+    "posx": -4.096,
+    "posy": -4.49,
+    "posz": 4.308,
+    "text": "dog"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 68,
+    "thickness": 73,
+    "color": "#886e51",
+    "posx": -1.11,
+    "posy": -2.441,
+    "posz": -1.392,
+    "text": "cat"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 55,
+    "thickness": 18,
+    "color": "#946756",
+    "posx": -4.302,
+    "posy": 0.077,
+    "posz": -0.314,
+    "text": "moon"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 16,
+    "thickness": 20,
+    "color": "#8e5c6a",
+    "posx": 0.509,
+    "posy": -1.779,
+    "posz": 1.07,
+    "text": "table"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 95,
+    "thickness": 90,
+    "color": "#847e6c",
+    "posx": 0.573,
+    "posy": 2.664,
+    "posz": -3.294,
+    "text": "bird"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 26,
+    "thickness": 19,
+    "color": "#9d7e4a",
+    "posx": 1.723,
+    "posy": 1.983,
+    "posz": 0.67,
+    "text": "flower"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 50,
+    "thickness": 66,
+    "color": "#8c6b6a",
+    "posx": -0.707,
+    "posy": 4.236,
+    "posz": -1.825,
+    "text": "book"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 46,
+    "thickness": 48,
+    "color": "#7d7268",
+    "posx": 0.238,
+    "posy": 1.349,
+    "posz": -4.582,
+    "text": "lamp"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 72,
+    "thickness": 74,
+    "color": "#947b7f",
+    "posx": -1.198,
+    "posy": -4.282,
+    "posz": 3.361,
+    "text": "table"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 48,
+    "thickness": 59,
+    "color": "#857d69",
+    "posx": -4.481,
+    "posy": 2.643,
+    "posz": 2.273,
+    "text": "moon"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 71,
+    "thickness": 79,
+    "color": "#7e6f63",
+    "posx": -0.477,
+    "posy": -4.234,
+    "posz": -3.113,
+    "text": "pen"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 10,
+    "thickness": 58,
+    "color": "#82615d",
+    "posx": -0.244,
+    "posy": 0.719,
+    "posz": -0.716,
+    "text": "cat"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 69,
+    "thickness": 94,
+    "color": "#826957",
+    "posx": 0.941,
+    "posy": -4.707,
+    "posz": -3.095,
+    "text": "table"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 86,
+    "thickness": 77,
+    "color": "#8f7455",
+    "posx": -4.41,
+    "posy": -3.694,
+    "posz": -1.45,
+    "text": "bird"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 30,
+    "thickness": 95,
+    "color": "#84767a",
+    "posx": 1.081,
+    "posy": 3.161,
+    "posz": -4.23,
+    "text": "sun"
+  },
+  {
+    "section": 1,
+    "wobbleIntensity": 84,
+    "thickness": 63,
+    "color": "#826d5b",
+    "posx": -3.453,
+    "posy": -0.873,
+    "posz": -2.641,
+    "text": "house"
+  },
+  {
+    "section": 2,
+    "wobbleIntensity": 28,
+    "thickness": 87,
+    "color": "#7f6a56",
+    "posx": -3.321,
+    "posy":
+
+ 4.788,
+    "posz": 3.218,
+    "text": "lamp"
+  },
+  {
+    "section": 3,
+    "wobbleIntensity": 32,
+    "thickness": 20,
+    "color": "#947d7d",
+    "posx": 0.586,
+    "posy": -1.773,
+    "posz": -1.24,
+    "text": "flower"
+  }
+]
