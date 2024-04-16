@@ -1,0 +1,109 @@
+{
+  "hash": "9ac443c1",
+  "configHash": "dc3758f9",
+  "lockfileHash": "7fb75100",
+  "browserHash": "bbadd0a8",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "9b84babb",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "4ce1ce6d",
+      "needsInterop": true
+    },
+    "@react-three/fiber": {
+      "src": "../../node_modules/@react-three/fiber/dist/react-three-fiber.esm.js",
+      "file": "@react-three_fiber.js",
+      "fileHash": "b13b24f7",
+      "needsInterop": false
+    },
+    "@react-three/drei": {
+      "src": "../../node_modules/@react-three/drei/index.js",
+      "file": "@react-three_drei.js",
+      "fileHash": "817eb9bc",
+      "needsInterop": false
+    },
+    "three": {
+      "src": "../../node_modules/three/build/three.module.js",
+      "file": "three.js",
+      "fileHash": "4d61a4a4",
+      "needsInterop": false
+    },
+    "leva": {
+      "src": "../../node_modules/leva/dist/leva.esm.js",
+      "file": "leva.js",
+      "fileHash": "313455be",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "e3ac73c6",
+      "needsInterop": false
+    },
+    "uid": {
+      "src": "../../node_modules/uid/dist/index.mjs",
+      "file": "uid.js",
+      "fileHash": "ceb78bbc",
+      "needsInterop": false
+    },
+    "firebase/database": {
+      "src": "../../node_modules/firebase/database/dist/esm/index.esm.js",
+      "file": "firebase_database.js",
+      "fileHash": "6114a300",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "d644dae0",
+      "needsInterop": false
+    },
+    "firebase/analytics": {
+      "src": "../../node_modules/firebase/analytics/dist/esm/index.esm.js",
+      "file": "firebase_analytics.js",
+      "fileHash": "b49ca00f",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-CEJB3NNX": {
+      "file": "chunk-CEJB3NNX.js"
+    },
+    "troika-three-text.esm-CQDMPFOY": {
+      "file": "troika-three-text__esm-CQDMPFOY.js"
+    },
+    "vision_bundle-V3PWMATS": {
+      "file": "vision_bundle-V3PWMATS.js"
+    },
+    "chunk-7T4CTAIN": {
+      "file": "chunk-7T4CTAIN.js"
+    },
+    "chunk-PNMCFTFF": {
+      "file": "chunk-PNMCFTFF.js"
+    },
+    "chunk-6Y72WEBH": {
+      "file": "chunk-6Y72WEBH.js"
+    },
+    "chunk-NNCPRCJM": {
+      "file": "chunk-NNCPRCJM.js"
+    },
+    "chunk-PXJLUKTU": {
+      "file": "chunk-PXJLUKTU.js"
+    },
+    "chunk-CVAAIOKW": {
+      "file": "chunk-CVAAIOKW.js"
+    },
+    "chunk-FQO5W7GE": {
+      "file": "chunk-FQO5W7GE.js"
+    },
+    "chunk-ZS7NZCD4": {
+      "file": "chunk-ZS7NZCD4.js"
+    }
+  }
+}

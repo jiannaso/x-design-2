@@ -1,0 +1,38 @@
+[
+    {
+      "section": "Cohesion",
+      "question": "If you are designing a bridge, would it be a sturdy steel structure connecting commmunities or whimsical suspension bridge inspiring unity through creativity?",
+      "lower": "sturdy steel structure",
+      "higher": "whimsical suspension bridge"
+    },
+    {
+        "section": " ",
+        "question": "When designing for accessibility, do you prefer a universal design approach that fits all or a customized solutions approach?",
+        "lower": "universal design",
+        "higher": "customized solutions"
+      },
+      {
+        "section": "Collaboration",
+        "question": "If your design team were a superhero duo, would you be Iron Man and J.A.R.V.I.S (futuristic human-AI partnership), Batman and Robin (classic human teamwork), or some of both?",
+        "lower": "Iron Man and J.A.R.V.I.S",
+        "higher": "Batman and Robin"
+      },
+      {
+        "section": " ",
+        "question": "What is a good team size for you? Slide through the range from working solo (1) to a team of 20 members.",
+        "lower": "1",
+        "higher": "20"
+      },
+      {
+        "section": "Coexistence",
+        "question": "In the fight against climate change, are you a Green warrior leading the charge, a Quiet innovator making a difference behind the scenes, or some of both?",
+        "lower": "Green warrior",
+        "higher": "Quiet innovator"
+      },
+      {
+        "section": " ",
+        "question": "When imagining a sustainable future, do you prefer innovative technology-driven solutions, a return to traditional and natural methods, or some of both?",
+        "lower": "innovative",
+        "higher": "traditional"
+      }
+    ]

@@ -6,10 +6,21 @@ import { DirectionalLightHelper } from "three"
 import { useControls } from "leva"
 import React, { useState } from 'react';
 // import initData from './data/data1.json';
+import initQuestions from './data/questions.json';
 import axios from 'axios';
 import {db} from './firebase';
 import {uid} from 'uid';
-import {set, ref, DataSnapshot, onValue} from 'firebase/database';
+import {set, ref, DataSnapshot, onValue, update} from 'firebase/database';
+import Question from "./components/question";
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
+import myFont from './fonts/fixed.json'
+import { extend } from '@react-three/fiber'
+extend({ TextGeometry })
+import scrollText from "./assets/text.gif"
+import { colorToRgba } from "@react-spring/shared"
+
+
 
 const TorusKnotAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, text }) => {
   const ref = useRef();
@@ -22,8 +33,8 @@ const TorusKnotAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, 
    const mappedThickness = 0.1 + (thickness / 100) * 0.6; // Maps 0-100 to 0.1-0.7
 
    useFrame(() => {
-    // posx+=.01*Math.random();
-    // posy+=.01*Math.random();
+    // posx+=.01*(Math.random()-.5);
+    // posy+=.01*(Math.random()-.5);
     // ref.current.rotation.x += 0.01;
     // ref.current.rotation.y += 0.01;
     ref.current.position.set(posx, posy, posz);
@@ -32,7 +43,7 @@ const TorusKnotAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, 
   return (
     <mesh ref={ref}>
       <torusKnotGeometry args={[.25, mappedThickness, 2000, 20]} />
-      <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={0.8} transparent={true}/>
+      <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={0.8} transparent={false}/>
       <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
     </mesh>
   );
@@ -61,7 +72,7 @@ const SphereAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, tex
   return (
     <mesh ref={ref}>
       <torusGeometry args={[mappedThickness, mappedThickness/2, 10, 100]} />
-      <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={1} opacity={0.8} transparent={true}/>
+      <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={1} opacity={0.8} transparent={false}/>
       <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
     </mesh>
   );
@@ -71,10 +82,14 @@ const SphereAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, tex
 
 const Label = ({posx, posy, posz, text, color}) => {
   const offset = .75
+  const font = new FontLoader().parse(myFont);
+  console.log('color' + color);
+  const colorInput = 'hsl(' + color * 360 / 100 + ', 100%, 100%)'
   return (
-    <Text position={[offset,offset,0]} fontSize={.2} color={color}>
-    {text}
-    </Text>
+    <mesh position={[offset, offset,0]}>
+    <textGeometry args={[text, {font, size:.2, height: .05}]}/>
+    <meshLambertMaterial attach='material' color={"black"}/>    
+    </mesh>
   )
 }
 
@@ -116,14 +131,14 @@ const CubeAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, text 
         <mesh ref={ref}>
           <boxGeometry args={[mappedThickness, mappedThickness, mappedThickness]} />
           {/* <TorusGeometry args={[mappedThickness, mappedThickness, mappedThickness, 10]} /> */}
-          <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={.8} transparent={true} />
+          <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={.8} transparent={false} />
           <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
         </mesh>
 
         <mesh ref={ref2}>
           <sphereGeometry args={[mappedThickness/2, 32, 20]} />
           {/* <TorusGeometry args={[mappedThickness, mappedThickness, mappedThickness, 10]} /> */}
-          <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={.8} transparent={true} />
+          <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={.8} transparent={false} />
         </mesh>
 
         
@@ -156,9 +171,9 @@ const Scene = ({avatars, section}) => {
   return (
     <>
       {/* <directionalLight position={[0, 0, 2]} intensity ={lightIntensity} ref={directionalLightRef} color = {lightColor}/> */}
-      <directionalLight position={[0, 0, 2]} intensity ={.1} ref={directionalLightRef} color = {"white"}/>      <directionalLight position={[0, 0, 2]} intensity ={3} ref={directionalLightRef} color = {"white"}/>
-      <directionalLight position={[0, 2, 0]} intensity ={.1} ref={directionalLightRef} color = {"white"}/>
-      <directionalLight position={[2, 0, 0]} intensity ={.1} ref={directionalLightRef} color = {"white"}/>
+      <directionalLight position={[0, 0, 10]} intensity ={.1} ref={directionalLightRef} color = {"white"}/>      <directionalLight position={[0, 0, 2]} intensity ={3} ref={directionalLightRef} color = {"white"}/>
+      <directionalLight position={[0, 10, 0]} intensity ={.1} ref={directionalLightRef} color = {"white"}/>
+      <directionalLight position={[10, 0, 0]} intensity ={.1} ref={directionalLightRef} color = {"white"}/>
 
       <ambientLight intensity={0.4} />
 
@@ -166,15 +181,15 @@ const Scene = ({avatars, section}) => {
                 <mesh
                 key={index}
                 >
-                  {(avatar.section == 1 && section == 1) || (avatar.section == 1 && section == 0) ? <TorusKnotAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
-                  {(avatar.section == 2 && section == 2) || (avatar.section == 1 && section == 0) ? <SphereAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
-                  {(avatar.section == 3 && section == 3) || (avatar.section == 1 && section == 0)? <CubeAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
+                  {avatar.section > 0 ? <TorusKnotAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
+                  {/* {avatar.section == 2 ? <SphereAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
+                  {avatar.section == 3 ? <CubeAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null } */}
 
                   {/* <TorusKnotAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz}/> */}
                 </mesh>
             ))}
 
-      <OrbitControls enableZoom = {true} autoRotate={false} autoRotateSpeed={1}/>
+      <OrbitControls enableZoom = {true} autoRotate={false} autoRotateSpeed={.5}/>
       </>
   )
 }
@@ -189,19 +204,18 @@ const App = ()  => {
     const [color, setColor] = useState("#ff00ff");
     const [section, setSection] = useState(1);
     const [avatars, setAvatars] = useState([]);
-    const [questionsVisible, setQuestionsVisible] = useState(true);
+    const [questionsVisible, setQuestionsVisible] = useState(false);
     const [newAvatar, setNewAvatar] = useState({});
     const [canvasVisible, setCanvasVisible] = useState(false);
     const [avatarVisible, setAvatarVisible] = useState(false);
-
-
-    const sliderStyle = {
-    width: '200px', 
-    margin: '10px 0', //vertical spacing
-  };
-
-
-
+    const [text, setText] = useState("");
+    const [landingVisible, setLandingVisible] = useState(true);
+    const [questions, setQuestions] = useState(initQuestions);
+    const [cohesion, setCohesion] = useState(false);
+    const [collab, setCollab] = useState(false);
+    const [coexist, setCoexist] = useState(false);
+    const [nickname, setNickname] = useState(false);
+    
   useEffect(() => {
     onValue(ref(db, `avatars/`), DataSnapshot => {
       const data = DataSnapshot.val();
@@ -216,129 +230,182 @@ const App = ()  => {
     })
   }, [avatars]);
 
+  const updateSection = (value) => {
+    setSection(value);
+    console.log("section" + value);
+  }
+
+  const updateWobble = (value) => {
+    setWobbleIntensity(value);
+    console.log("wobble" + value);
+  }
+
+  const updateThickness = (value) => {
+    setThickness(value);
+    console.log("thickness" + value);
+  }
+
+  const updateColor = (value) => {
+    setColor(value);
+    console.log("color" + value);
+  }
+
   const writeDb = () => {
     const uuid = uid();
     set(ref(db, `avatars/` + `/${uuid}`), {
       wobbleIntensity,
       thickness,
-      color,
+      color: color * 256 / 100,
       section,
       posx: (Math.random()-.5)*10,
       posy: (Math.random()-.5)*10,
       posz: (Math.random()-.5)*10,
-      text: "hello"
+      text: text
     });
   }
   
   return (
   <div style={{ width: "100vw", height: "100vh" }}>
-    {questionsVisible == true ?
+
+    {/* SCREEN1: landing */}
+
+    {landingVisible == true ?
+    <div class = "background">
+    
+    <div class="centered">
+    <div class="scroll">
+    <img class="image" src={scrollText}/>
+      </div> 
+      <div class="landing"> 
+        <h1 class="bigTitle"> Hi CO designer </h1> 
+        {/* <h1>Welcome to Harvard x Design </h1> */}
+        <h2> Create a community garden with Harvard x Design</h2>
+        <h2> </h2>
+        <button onClick={() => {
+          setLandingVisible(false);
+          setCohesion(true);
+        }}
+          > Get planting </button>
+      </div>
+      <div class="scroll">
+    <img class="image" src={scrollText}/>
+      </div> 
+    </div>
+    
+    </div>
+    : null
+    }
+
+
+    {/* SCREEN2: all questions */}
+    {cohesion == true ?
     <div style ={{display: "flex", flexDirection: "column"} }>
-
-  <div>
-
-    <label>Section {section}</label>
-      <input
-        type="range"
-        min="1"
-        max="3"
-        value={section}
-        onChange={(e) => setSection(e.target.value)}
-        style={sliderStyle}
-      />
+      <Question question={questions[0]} setVal={updateSection}></Question>
+      <Question question={questions[1]} setVal={updateWobble}></Question>
+      <button class="nextQuestion" onClick={() => {
+        setCollab(true);
+        setCohesion(false)
+      }}> next </button> 
       </div>
+        :
+      null
+    }
 
-      <div>
-      <label>Wobble Intensity: {wobbleIntensity}</label>
-      <input
-        type="range"
-        min="0"
-        max="100"
-        value={wobbleIntensity}
-        onChange={(e) => setWobbleIntensity(e.target.value)}
-        style={sliderStyle}
-      />
+    {collab == true ?
+    <div style ={{display: "flex", flexDirection: "column"} }>
+      <Question question={questions[2]} setVal={updateSection}></Question>
+      <Question question={questions[3]} setVal={updateWobble}></Question>
+      <button class="nextQuestion" onClick={() => {
+        setCoexist(true);
+        setCollab(false);
+      }}> next </button> 
       </div>
+        :
+      null
+    }
 
-      <div>
-      <label>Thickness: {thickness}</label>
+    {coexist == true ?
+      <div style ={{display: "flex", flexDirection: "column"} }>
+        <Question question={questions[4]} setVal={updateSection}></Question>
+        <Question question={questions[5]} setVal={updateWobble}></Question>
+        <button class="nextQuestion" onClick={() => {
+          setNickname(true);
+          setCoexist(false);
+        }}> next </button> 
+        </div>
+          :
+        null
+      }
+
+{nickname == true ?
+<div class = "question">
+      <div style ={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"} }>
+        <h1 class = "sectionText"> Community</h1>
+    <h2>How can we refer to you by?</h2>
+    <h3>Remember this will be visible for everyone at the conference</h3>
+
       <input
-        type="range"
-        min="0"
-        max="100"
-        value={thickness}
-        onChange={(e) => setThickness(e.target.value)}
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
-      </div>
-
-      <div>
-      <label>Color:</label>
-      <input
-        type="color"
-        value={color}
-        onChange={(e) => setColor(e.target.value)}
-      />
-      </div>
-
-      <div>
-      <button onClick={() => {
-        setNewAvatar({section: section, wobbleIntensity: wobbleIntensity, thickness: thickness, color: color, posx: 0, posy:0, posz: 0, text: 'hello'});
-        JSON.stringify(avatars);
-        setQuestionsVisible(false);
+        <button class="nextQuestion" onClick={() => {
+        setNewAvatar({section: section, wobbleIntensity: wobbleIntensity, thickness: thickness, color: color, posx: 0, posy:0, posz: 0, text: text});
+        // JSON.stringify(avatars);
+        setNickname(false);
         setAvatarVisible(true);
-        setCanvasVisible(false);
         writeDb();
       }}> generate</button>
-      </div>
+        </div>
+        </div>
+          :
+        null
+      }
         
-      </div>
-
-    
-    : 
-    null
-  }
-
-
-
-  {canvasVisible == true ? 
-  <div>
-  <button onClick={() => {
-      // console.log(wobbleIntensity);
-      setQuestionsVisible(true)
-      setCanvasVisible(false)
-      setAvatarVisible(false);
-    }}> again </button>
-    <div style ={{display: "flex"}}>
-        <Canvas style={{ background: "black", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 50}}>
-          <Scene avatars={avatars} section={1}/>
-        </Canvas>
-      </div>
-  
-  </div>
-  : null
-   }
-
+  {/* SCREEN3: solo avatar */}
    { avatarVisible == true ?
    <div>
-   <button onClick={() => {
+   
+   <div style ={{display: "flex"}}>
+   <Canvas style={{ background: "white", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 10}}>
+       <directionalLight position={[0, 0, 2]} intensity ={3} color = {"white"}/>
+         <ambientLight intensity={0.4} />
+         {/* <OrbitControls /> */}
+         <TorusKnotAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text} />
+         {/* {newAvatar.section == 2 ? <SphereAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text}/> : null}
+         {newAvatar.section == 3 ? <CubeAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text}/> : null} */}
+         <OrbitControls enableZoom = {true}/>
+       </Canvas>
+       
+     </div>
+     <button class="floating" onClick={() => {
        // console.log(wobbleIntensity);
        setQuestionsVisible(false);
        setCanvasVisible(true);
        setAvatarVisible(false);
      }}> see all </button>
-   <div style ={{display: "flex"}}>
-   <Canvas style={{ background: "black", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 10}}>
-       <directionalLight position={[0, 0, 2]} intensity ={3} color = {"white"}/>
-         <ambientLight intensity={0.4} />
-         {/* <OrbitControls /> */}
-         {newAvatar.section == 1 ? <TorusKnotAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text} /> : null}
-         {newAvatar.section == 2 ? <SphereAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text}/> : null}
-         {newAvatar.section == 3 ? <CubeAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text}/> : null}
- 
-       </Canvas>
-     </div>
     </div>
     : null}
+
+    {/* SCREEN4: all avatars*/}
+    {canvasVisible == true ? 
+    <div>
+    
+      <div style ={{display: "flex"}}>
+          <Canvas style={{ background: "white", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 50}}>
+            <Scene avatars={avatars} section={0}/>
+          </Canvas>
+        </div>
+        <button class="floating" onClick={() => {
+        setQuestionsVisible(false);
+        setLandingVisible(true);
+        setCanvasVisible(false)
+        setAvatarVisible(false);
+      }}> again </button>
+    
+    </div>
+    : null
+    }
   </div>
   );
 
