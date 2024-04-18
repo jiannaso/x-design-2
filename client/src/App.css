@@ -50,10 +50,10 @@ input[type="range"]:hover {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   /* appearance: none; */
-  width: 41px; 
-  height: 18px;
+  width: 80px; 
+  height: 34.43px;
   /* background: black; */
-  background: url("./assets/co-black-smaller.png");
+  background: url("./assets/co-black.png");
   border-radius: 20px;
   cursor: pointer;
 }
@@ -104,7 +104,7 @@ h1 {
   }
 
 .bigTitle {
-  font-size: 3.5rem;
+  font-size: 5vmax;
 
 }
 
@@ -132,8 +132,8 @@ h3 {
 }
 
 .centered {
-  height: 100vh;
-  overflow: hidden;
+  height: 83vh;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,12 +173,12 @@ Text {
 }
 
 .scroll {
-  height: 10vh;
+  height: 8.5vh;
   overflow: hidden;
 }
 
 .image {
-  height: 10vh;
+  height: 8.5vh;
   /* display: block; */
   /* margin-left: auto; */
   /* margin-right: auto; */

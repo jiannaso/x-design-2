@@ -16,7 +16,7 @@ const Question = ({question, setVal})  => {
     // console.log(Object.values(question)[0].ask);
     let questionArray = Object.values(question);
     // console.log(val);
-    const [localVal, setLocalVal] = useState(50);
+    const [localVal, setLocalVal] = useState(10);
 
 
     const setVals = (value) => {
@@ -41,7 +41,7 @@ const Question = ({question, setVal})  => {
         type="range"
         class="slider"
         min="1"
-        max="100"
+        max="20"
         value={localVal}
         onChange={(e) => setVals(e.target.value)}
       />

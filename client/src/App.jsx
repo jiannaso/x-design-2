@@ -19,135 +19,51 @@ import { extend } from '@react-three/fiber'
 extend({ TextGeometry })
 import scrollText from "./assets/text.gif"
 import { colorToRgba } from "@react-spring/shared"
+import Flower from "./components/flower"
+import Garden from "./components/garden"
+
+// // const TorusKnotAvatar = ({ one, thickness, color, posx, posy, posz, text }) => {
+// //   const ref = useRef();
+// //   console.log(posx);
+// //   console.log(posy);
+// //   // let pos = [posx, posy, 0]
+
+// //    // Mapping the input values to the required ranges
+// //    const mappedWobbleIntensity = 1 + (wobbleIntensity / 100) * 9; // Maps 0-100 to 1-10
+// //    const mappedThickness = 0.1 + (thickness / 100) * 0.6; // Maps 0-100 to 0.1-0.7
+
+// //    useFrame(() => {
+// //     // posx+=.01*(Math.random()-.5);
+// //     // posy+=.01*(Math.random()-.5);
+// //     // ref.current.rotation.x += 0.01;
+// //     // ref.current.rotation.y += 0.01;
+// //     ref.current.position.set(posx, posy, posz);
+// //   });
+
+// //   return (
+// //     <mesh ref={ref}>
+// //       <torusKnotGeometry args={[.25, mappedThickness, 2000, 20]} />
+// //       <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={0.8} transparent={false}/>
+// //       <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
+// //     </mesh>
+// //   );
 
 
+// // }
 
-const TorusKnotAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, text }) => {
-  const ref = useRef();
-  console.log(posx);
-  console.log(posy);
-  // let pos = [posx, posy, 0]
+// const Label = ({posx, posy, posz, text, color}) => {
+//   const offset = .75
+//   const font = new FontLoader().parse(myFont);
+//   console.log('color' + color);
+//   // const colorInput = 'hsl(' + color * 360 / 100 + ', 100%, 100%)'
 
-   // Mapping the input values to the required ranges
-   const mappedWobbleIntensity = 1 + (wobbleIntensity / 100) * 9; // Maps 0-100 to 1-10
-   const mappedThickness = 0.1 + (thickness / 100) * 0.6; // Maps 0-100 to 0.1-0.7
-
-   useFrame(() => {
-    // posx+=.01*(Math.random()-.5);
-    // posy+=.01*(Math.random()-.5);
-    // ref.current.rotation.x += 0.01;
-    // ref.current.rotation.y += 0.01;
-    ref.current.position.set(posx, posy, posz);
-  });
-
-  return (
-    <mesh ref={ref}>
-      <torusKnotGeometry args={[.25, mappedThickness, 2000, 20]} />
-      <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={0.8} transparent={false}/>
-      <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
-    </mesh>
-  );
-
-
-}
-
-const SphereAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, text }) => {
-  const ref = useRef();
-  console.log(posx);
-  console.log(posy);
-  // let pos = [posx, posy, 0]
-
-   // Mapping the input values to the required ranges
-   const mappedWobbleIntensity = 1 + (wobbleIntensity / 100) * 9; // Maps 0-100 to 1-10
-   const mappedThickness = 0.1 + (thickness / 100) * 0.6; // Maps 0-100 to 0.1-0.7
-
-   useFrame(() => {
-  //   // posx+=.01*Math.random();
-  //   // posy+=.01*Math.random();
-  //   // ref.current.rotation.x += 0.01;
-  //   // ref.current.rotation.y += 0.01;
-    ref.current.position.set(posx, posy, posz);
-  });
-
-  return (
-    <mesh ref={ref}>
-      <torusGeometry args={[mappedThickness, mappedThickness/2, 10, 100]} />
-      <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={1} opacity={0.8} transparent={false}/>
-      <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
-    </mesh>
-  );
-
-
-}
-
-const Label = ({posx, posy, posz, text, color}) => {
-  const offset = .75
-  const font = new FontLoader().parse(myFont);
-  console.log('color' + color);
-  const colorInput = 'hsl(' + color * 360 / 100 + ', 100%, 100%)'
-  return (
-    <mesh position={[offset, offset,0]}>
-    <textGeometry args={[text, {font, size:.2, height: .05}]}/>
-    <meshLambertMaterial attach='material' color={"black"}/>    
-    </mesh>
-  )
-}
-
-const CubeAvatar = ({ wobbleIntensity, thickness, color, posx, posy, posz, text }) => {
-  const ref = useRef();
-  console.log(posx);
-  console.log(posy);
-  // let pos = [posx, posy, 0]
-
-   // Mapping the input values to the required ranges
-   const mappedWobbleIntensity = 1 + (wobbleIntensity / 100) * 9; // Maps 0-100 to 1-10
-   const mappedThickness = 0.1 + (thickness / 100); // Maps 0-100 to 0.1-0.7
-
-   useFrame(() => {
-    // posx+=.01*Math.random();
-    // posy+=.01*Math.random();
-    // ref.current.rotation.x += 0.01;
-    // ref.current.rotation.y += 0.01;
-    ref.current.position.set(posx, posy-.5, posz);
-  });
-
-  const ref2 = useRef();
-  console.log(posx);
-  console.log(posy);
-  // let pos = [posx, posy, 0]
-
-   // Mapping the input values to the required ranges
-
-   useFrame(() => {
-    // posx+=.01*Math.random();
-    // posy+=.01*Math.random();
-    // ref.current.rotation.x += 0.01;
-    // ref.current.rotation.y += 0.01;
-    ref2.current.position.set(posx, posy, posz);
-  });
-
-  return (
-    <>
-        <mesh ref={ref}>
-          <boxGeometry args={[mappedThickness, mappedThickness, mappedThickness]} />
-          {/* <TorusGeometry args={[mappedThickness, mappedThickness, mappedThickness, 10]} /> */}
-          <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={.8} transparent={false} />
-          <Label posx={posx} posy={posy} posz={posz}  text = {text} color ={color}/>
-        </mesh>
-
-        <mesh ref={ref2}>
-          <sphereGeometry args={[mappedThickness/2, 32, 20]} />
-          {/* <TorusGeometry args={[mappedThickness, mappedThickness, mappedThickness, 10]} /> */}
-          <MeshWobbleMaterial factor={mappedWobbleIntensity} color={color} speed={2} opacity={.8} transparent={false} />
-        </mesh>
-
-        
-       
-    </>
-  );
-
-
-}
+//   return (
+//     <mesh position={[offset, offset,0]}>
+//     <textGeometry args={[text, {font, size:.2, height: .05}]}/>
+//     <meshLambertMaterial attach='material' color={"black"}/>    
+//     </mesh>
+//   )
+// }
 
 const Scene = ({avatars, section}) => {
 
@@ -181,11 +97,8 @@ const Scene = ({avatars, section}) => {
                 <mesh
                 key={index}
                 >
-                  {avatar.section > 0 ? <TorusKnotAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
-                  {/* {avatar.section == 2 ? <SphereAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null }
-                  {avatar.section == 3 ? <CubeAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} /> : null } */}
-
-                  {/* <TorusKnotAvatar wobbleIntensity={avatar.wobbleIntensity} thickness={avatar.thickness} color={avatar.color} posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz}/> */}
+                  <Flower one={avatar.one} zero={avatar.zero} two={avatar.two}  three={avatar.three} four={avatar.four} five={avatar.five}  six={avatar.six} seven={avatar.six} eight={avatar.eight}  posx={avatar.posx}  posy={avatar.posy} posz={avatar.posz} text = {avatar.text} />
+  
                 </mesh>
             ))}
 
@@ -199,13 +112,23 @@ const Scene = ({avatars, section}) => {
 const App = ()  => {
 
     // just a default state for the TorusKnotAvatar controls
-    const [wobbleIntensity, setWobbleIntensity] = useState(50);
-    const [thickness, setThickness] = useState(50);
-    const [color, setColor] = useState("#ff00ff");
-    const [section, setSection] = useState(1);
+    const [zero, setZero] = useState(10);
+    const [one, setOne] = useState(10);
+    const [two, setTwo] = useState(10);
+    const [three, setThree] = useState(10);
+    const [four, setFour] = useState(10);
+    const [five, setFive] = useState(10);
+    const [six, setSix] = useState(10);
+    const [seven, setSeven] = useState(10);
+    const [eight, setEight] = useState(10);
+
+
     const [avatars, setAvatars] = useState([]);
+
+
     const [questionsVisible, setQuestionsVisible] = useState(false);
-    const [newAvatar, setNewAvatar] = useState({});
+    const [newAvatar, setNewAvatar] = useState(
+    {three: 50, one: 50, zero: 50, two: 50, posx: 0, posy:0, posz: 0, text: "text"});
     const [canvasVisible, setCanvasVisible] = useState(false);
     const [avatarVisible, setAvatarVisible] = useState(false);
     const [text, setText] = useState("");
@@ -230,36 +153,69 @@ const App = ()  => {
     })
   }, [avatars]);
 
-  const updateSection = (value) => {
-    setSection(value);
-    console.log("section" + value);
+  
+
+  const updateZero = (value) => {
+    setZero(value);
+    console.log("zero" + value);
   }
 
-  const updateWobble = (value) => {
-    setWobbleIntensity(value);
-    console.log("wobble" + value);
+  const updateOne = (value) => {
+    setOne(value);
+    console.log("one" + value);
   }
 
-  const updateThickness = (value) => {
-    setThickness(value);
-    console.log("thickness" + value);
+  const updateTwo = (value) => {
+    setTwo(value);
+    console.log("two" + value);
   }
 
-  const updateColor = (value) => {
-    setColor(value);
-    console.log("color" + value);
+  const updateThree = (value) => {
+    setThree(value);
+    console.log("three" + value);
   }
 
+  const updateFour = (value) => {
+    setFour(value);
+    console.log("four" + value);
+  }
+
+  const updateFive = (value) => {
+    setFive(value);
+    console.log("five" + value);
+  }
+
+  const updateSix = (value) => {
+    setSix(value);
+    console.log("six" + value);
+  }
+
+  const updateSeven = (value) => {
+    setSeven(value);
+    console.log("seven" + value);
+  }
+
+  const updateEight = (value) => {
+    setEight(value);
+    console.log("eight" + value);
+  }
+
+  
   const writeDb = () => {
     const uuid = uid();
     set(ref(db, `avatars/` + `/${uuid}`), {
-      wobbleIntensity,
-      thickness,
-      color: color * 256 / 100,
-      section,
-      posx: (Math.random()-.5)*10,
-      posy: (Math.random()-.5)*10,
-      posz: (Math.random()-.5)*10,
+      one,
+      zero,
+      two,
+      three,
+      four,
+      five,
+      six,
+      seven,
+      eight,
+      posx: (Math.random()-.5)*20,
+      posy: (Math.random()-.5)*40,
+      posz: (Math.random()-.5)*20,
       text: text
     });
   }
@@ -271,26 +227,26 @@ const App = ()  => {
 
     {landingVisible == true ?
     <div class = "background">
-    
-    <div class="centered">
     <div class="scroll">
     <img class="image" src={scrollText}/>
       </div> 
+    <div class="centered">
       <div class="landing"> 
-        <h1 class="bigTitle"> Hi CO designer </h1> 
+        <h1 class="bigTitle">hi CO designer</h1> 
         {/* <h1>Welcome to Harvard x Design </h1> */}
-        <h2> Create a community garden with Harvard x Design</h2>
+        <h2> create a community garden with Harvard x Design</h2>
         <h2> </h2>
         <button onClick={() => {
           setLandingVisible(false);
           setCohesion(true);
         }}
-          > Get planting </button>
+          > get planting </button>
       </div>
-      <div class="scroll">
+      
+    </div>
+    <div class="scroll">
     <img class="image" src={scrollText}/>
       </div> 
-    </div>
     
     </div>
     : null
@@ -300,8 +256,9 @@ const App = ()  => {
     {/* SCREEN2: all questions */}
     {cohesion == true ?
     <div style ={{display: "flex", flexDirection: "column"} }>
-      <Question question={questions[0]} setVal={updateSection}></Question>
-      <Question question={questions[1]} setVal={updateWobble}></Question>
+      <Question question={questions[0]} setVal={updateZero}></Question>
+      <Question question={questions[1]} setVal={updateOne}></Question>
+      <Question question={questions[2]} setVal={updateTwo}></Question>
       <button class="nextQuestion" onClick={() => {
         setCollab(true);
         setCohesion(false)
@@ -313,8 +270,9 @@ const App = ()  => {
 
     {collab == true ?
     <div style ={{display: "flex", flexDirection: "column"} }>
-      <Question question={questions[2]} setVal={updateSection}></Question>
-      <Question question={questions[3]} setVal={updateWobble}></Question>
+      <Question question={questions[3]} setVal={updateThree}></Question>
+      <Question question={questions[4]} setVal={updateFour}></Question>
+      <Question question={questions[5]} setVal={updateFive}></Question>
       <button class="nextQuestion" onClick={() => {
         setCoexist(true);
         setCollab(false);
@@ -326,8 +284,9 @@ const App = ()  => {
 
     {coexist == true ?
       <div style ={{display: "flex", flexDirection: "column"} }>
-        <Question question={questions[4]} setVal={updateSection}></Question>
-        <Question question={questions[5]} setVal={updateWobble}></Question>
+        <Question question={questions[6]} setVal={updateSix}></Question>
+        <Question question={questions[7]} setVal={updateSeven}></Question>
+        <Question question={questions[8]} setVal={updateEight}></Question>
         <button class="nextQuestion" onClick={() => {
           setNickname(true);
           setCoexist(false);
@@ -350,7 +309,7 @@ const App = ()  => {
         onChange={(e) => setText(e.target.value)}
       />
         <button class="nextQuestion" onClick={() => {
-        setNewAvatar({section: section, wobbleIntensity: wobbleIntensity, thickness: thickness, color: color, posx: 0, posy:0, posz: 0, text: text});
+        setNewAvatar({three: three, one: one, zero: zero, two: two, posx: 0, posy:0, posz: 0, text: text});
         // JSON.stringify(avatars);
         setNickname(false);
         setAvatarVisible(true);
@@ -366,18 +325,8 @@ const App = ()  => {
    { avatarVisible == true ?
    <div>
    
-   <div style ={{display: "flex"}}>
-   <Canvas style={{ background: "white", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 10}}>
-       <directionalLight position={[0, 0, 2]} intensity ={3} color = {"white"}/>
-         <ambientLight intensity={0.4} />
-         {/* <OrbitControls /> */}
-         <TorusKnotAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text} />
-         {/* {newAvatar.section == 2 ? <SphereAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text}/> : null}
-         {newAvatar.section == 3 ? <CubeAvatar wobbleIntensity={newAvatar.wobbleIntensity} thickness={newAvatar.thickness} color={newAvatar.color} posx={newAvatar.posx}  posy={newAvatar.posy} posz={newAvatar.posz} text = {newAvatar.text}/> : null} */}
-         <OrbitControls enableZoom = {true}/>
-       </Canvas>
+    <Flower text={text} zero={zero} one={one} two={two} three={three} four={four} five={five} six={six} seven={seven} eight={eight}/>
        
-     </div>
      <button class="floating" onClick={() => {
        // console.log(wobbleIntensity);
        setQuestionsVisible(false);
@@ -391,11 +340,8 @@ const App = ()  => {
     {canvasVisible == true ? 
     <div>
     
-      <div style ={{display: "flex"}}>
-          <Canvas style={{ background: "white", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 50}}>
-            <Scene avatars={avatars} section={0}/>
-          </Canvas>
-        </div>
+      <Garden avatars={avatars}/>
+
         <button class="floating" onClick={() => {
         setQuestionsVisible(false);
         setLandingVisible(true);
