@@ -199,7 +199,7 @@ const Grid = ({avatars}) => {
        
       </Canvas>
       <div>
-        <div className="exampleWrapperDiv" style={{top: `${index}`, bottom: `${index}` } }>
+        {/* <div className="exampleWrapperDiv" style={{top: `${index}`, bottom: `${index}` } }>
         <ReactCurvedText
           width={width}
           height={height}
@@ -216,7 +216,7 @@ const Grid = ({avatars}) => {
           ellipseProps={ellipseProps}
           svgProps={{ className: 'rotating-curved-text' }}
         />
-      </div>
+      </div> */}
         </div>
         </div>
        ))}
