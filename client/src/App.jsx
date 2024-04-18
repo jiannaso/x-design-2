@@ -21,6 +21,7 @@ import scrollText from "./assets/text.gif"
 import { colorToRgba } from "@react-spring/shared"
 import Flower from "./components/flower"
 import Garden from "./components/garden"
+import Grid from "./components/grid"
 
 // // const TorusKnotAvatar = ({ one, thickness, color, posx, posy, posz, text }) => {
 // //   const ref = useRef();
@@ -129,7 +130,7 @@ const App = ()  => {
     const [questionsVisible, setQuestionsVisible] = useState(false);
     const [newAvatar, setNewAvatar] = useState(
     {three: 50, one: 50, zero: 50, two: 50, posx: 0, posy:0, posz: 0, text: "text"});
-    const [canvasVisible, setCanvasVisible] = useState(false);
+    const [canvasVisible, setCanvasVisible] = useState(true);
     const [avatarVisible, setAvatarVisible] = useState(false);
     const [text, setText] = useState("");
     const [landingVisible, setLandingVisible] = useState(true);
@@ -338,16 +339,16 @@ const App = ()  => {
 
     {/* SCREEN4: all avatars*/}
     {canvasVisible == true ? 
-    <div>
+    <div class="darkBg">
     
-      <Garden avatars={avatars}/>
+      <Grid avatars={avatars.slice(0, 15)}/>
 
-        <button class="floating" onClick={() => {
+        {/* <button class="floating" onClick={() => {
         setQuestionsVisible(false);
         setLandingVisible(true);
         setCanvasVisible(false)
         setAvatarVisible(false);
-      }}> again </button>
+      }}> again </button> */}
     
     </div>
     : null

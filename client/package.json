@@ -18,8 +18,10 @@
     "express": "^4.19.2",
     "firebase": "^10.11.0",
     "firebase-tools": "^13.7.2",
+    "jsx-to-string": "^1.4.0",
     "leva": "^0.9.35",
     "react": "^18.2.0",
+    "react-curved-text": "^3.0.1",
     "react-dom": "^18.2.0",
     "uid": "^2.0.2"
   },

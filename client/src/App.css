@@ -192,6 +192,7 @@ Text {
   animation: animateContainer 10s linear forwards infinite;
   animation-play-state: paused;
 }
+
 @keyframes animateContainer {
   from {
     transform: translateX(calc(100vw));
@@ -204,4 +205,64 @@ Text {
 .nextQuestion {
   margin-bottom: 50px;
   margin-top: 50px;
+}
+
+.CanvasContainer {
+  position: relative;
+  display: flex;
+  background-color: black;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  /* animation: moveGroup 10s infinite alternate linear; Adjust duration and animation type as needed */
+}
+
+@keyframes moveGroup {
+  0% {
+    transform: translate(5, 0);
+  }
+  100% {
+    transform: translate(50px, 50px); /* Adjust distance and direction of movement */
+  }
+}
+
+.darkBg {
+  background-color: black;
+  overflow: scroll;
+  margin: 0;
+}
+
+.exampleWrapperDiv {
+  /* border: 8px solid; */
+  /* border-image: linear-gradient(45deg, turquoise, greenyellow) 1; */
+  width: 20vw;
+  height: 33vh;
+  position: absolute;
+ 
+  z-index: 1;
+  /* margin: auto; */
+  /* background-color: "white"; */
+}
+
+
+.rotating-curved-text {
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
