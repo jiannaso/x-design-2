@@ -10,7 +10,7 @@ import FlowerCap from './FlowerCap.jsx';
 import Blob from './Blob.jsx';
 import { ElevationProvider } from './ElevationContext.jsx';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
-import myFont from '../fonts/fixed.json'
+import myFont from '../fonts/regular-fixed.json'
 
 
 
@@ -29,11 +29,11 @@ const Scene = () => {
 
  
   useEffect(() => {
-    if (directionalLightRef.current) {
-      const helper = new DirectionalLightHelper(directionalLightRef.current, 0.5, "white");
-      directionalLightRef.current.parent.add(helper);
-      return () => directionalLightRef.current.parent.remove(helper);
-    }
+    // if (directionalLightRef.current) {
+    //   const helper = new DirectionalLightHelper(directionalLightRef.current, 0.5, "white");
+    //   directionalLightRef.current.parent.add(helper);
+    //   return () => directionalLightRef.current.parent.remove(helper);
+    // }
   }); 
   return (
     <>
@@ -126,23 +126,11 @@ const RotatingGroup = ({text, zero, one, two, three, four, five, six, seven, eig
 //     },
 //   });
 
-  const Label = ({posx, posy, posz, text}) => {
-    const offset = .75;
-    const font = new FontLoader().parse(myFont);
-    // console.log('color' + color);
-
-    return (
-      <mesh position={[posx+offset, posy+offset,posz]}>
-      <textGeometry args={[text, {font, size:.5, depth: .05}]}/>
-      <meshLambertMaterial attach='material' color={"black"}/>    
-      </mesh>
-    )
-  }
+  
 
   return (
     <group ref={groupRef}>
       <Scene />
-      <Label posx={2} posy={6} posz={0} text={text}/>
       <Stipe noise={seven} base={eight}/>
       <FlowerLeaves numLeaves={four} bevelSize={five} bevelThickness={six}/>
       <FlowerCap numPetals={zero} petalRotation={one} bevelThickness={two} bevelSize={three}/> 
@@ -153,16 +141,29 @@ const RotatingGroup = ({text, zero, one, two, three, four, five, six, seven, eig
 
 const Flower = ({text, zero, one, two, three, four, five, six, seven, eight}) => {
   
+  const Label = ({posx, posy, posz, text}) => {
+    const offset = .75;
+    const font = new FontLoader().parse(myFont);
+    // console.log('color' + color);
+
+    return (
+      <mesh position={[posx+offset, posy+offset,posz]}>
+      <textGeometry args={[text, {font, size:.75, depth: .05}]}/>
+      <meshLambertMaterial attach='material' color={"white"}/>    
+      </mesh>
+    )
+  }
 
   return (
     <ElevationProvider>
     <div className="App" >
-      <div className = "CanvasContainer">
-      <Canvas style={{ background: "white", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 50}}>
+      <div className = "">
+      <Canvas style={{ background: "black", width: "100vw", height: "100vh"}} camera={{ position: [-5, 12, 13], fov: 60}}>
         <ambientLight intensity={0.2}/>
         <directionalLight position={[.5,.5,.5]} intensity={20} color={"pink"}/>
         <RotatingGroup text={text} zero={zero} one={one} two={two} three={three} four={four} five={five} six={six} seven={seven} eight={eight}/>
         {/* <OrbitControls/> */}
+        <Label posx={1} posy={-3} posz={1} text={text}/>
       </Canvas>
       </div>
     </div>

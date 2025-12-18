@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: black;
   color: black; 
   font-family: Arial, sans-serif; 
   display: flex;
@@ -32,13 +32,15 @@ body {
 input[type="range"] {
   -webkit-appearance: none; 
   appearance: none;
-  width: 50%; 
-  flex-grow: 1;
+  width: 100%; 
+  /* flex-grow: 1; */
   height: 5px;
   background: #FFFE00; 
   /* outline: none; */
   opacity: 1; 
   transition: opacity 0.2s;
+  margin: auto;
+  z-index: 1;
 }
 
 /* Hover effect for sliders */
@@ -49,13 +51,15 @@ input[type="range"]:hover {
 /* the thumb of the slider */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  /* appearance: none; */
+  appearance: none;
   width: 80px; 
   height: 34.43px;
   /* background: black; */
   background: url("./assets/co-black.png");
   border-radius: 20px;
   cursor: pointer;
+  z-index: 1;
+  
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -84,14 +88,21 @@ input[type="color"] {
 @font-face {
   font-family: "balgin-regular";
   src: local("balgin-regular"),
-    url("./fonts/Fontspring-DEMO-balgindisplay-regular.otf") format("opentype");
+    url("./fonts/balgin-regular.ttf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ABeeZee";
+  src: local("ABeeZee"),
+    url("./fonts/ABeeZee-Italic.ttf") format("opentype");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "balgin-bold";
   src: local("balgin-bold"),
-    url("./fonts/Fontspring-DEMO-balgindisplay-bold.otf") format("opentype");
+    url("./fonts/balgin-bold.ttf") format("opentype");
   font-weight: normal;
 }
 
@@ -151,21 +162,24 @@ h3 {
 
 button {
   background: none;
-    border: 2px solid gray;
+    border: 1px solid gray;
   color: black;
-  padding: 15px 32px;
+  padding: 10px 10px;
   text-align: center;
   font-family: "balgin-regular";
   display: inline-block;
   font-size: 16px;
   border-radius: 20px;
   margin: auto;
+  margin-bottom: 20px;
+  width: 150px;
+  font-size: .8rem;
   /* margin-bottom: 100px; */
 }
 
 button.floating {
-  position: absolute;
-  top: 40px; left: 40px;
+  margin: auto;
+  color: white;
 }
 
 Text {
@@ -203,8 +217,12 @@ Text {
 }
 
 .nextQuestion {
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin: auto;
+  margin-top: 0px;
+  
+  /* margin-bottom: 50px;
+  margin-top: 50px; */
+  background-color: white;
 }
 
 .CanvasContainer {
@@ -214,7 +232,7 @@ Text {
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
-  /* animation: moveGroup 10s infinite alternate linear; Adjust duration and animation type as needed */
+  animation: moveGroup 10s infinite alternate linear; 
 }
 
 @keyframes moveGroup {
@@ -228,8 +246,9 @@ Text {
 
 .darkBg {
   background-color: black;
-  overflow: scroll;
+  /* overflow: scroll; */
   margin: 0;
+  height: 100%;
 }
 
 .exampleWrapperDiv {
@@ -238,7 +257,7 @@ Text {
   width: 20vw;
   height: 33vh;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   /* margin: auto; */
   /* background-color: "white"; */
 }
@@ -264,4 +283,15 @@ Text {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+button.view-flowers {
+  width: auto;
+  color: white;
+  font-size: 1rem;
+  /* border: none; */
+  margin: 20px;
+  height: 39.5px;
+  width: 39.5px;
+  padding: 0px;
 }

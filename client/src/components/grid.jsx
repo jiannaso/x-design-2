@@ -10,7 +10,7 @@ import FlowerCap from './FlowerCap.jsx';
 import Blob from './Blob.jsx';
 import { ElevationProvider } from './ElevationContext.jsx';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
-import myFont from '../fonts/fixed.json'
+import myFont from '../fonts/regular-fixed.json'
 import ReactCurvedText from 'react-curved-text';
 import jsxToString from 'jsx-to-string';
 
@@ -59,15 +59,14 @@ const RotatingGroup = ({text, zero, one, two, three, four, five, six, seven, eig
   useEffect(() => {
     if (groupRef.current) {
       groupRef.current.rotation.x += Math.PI / 6; 
+      groupRef.current.rotation.y += Math.PI / 6; 
     }
   }, []);
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y -= 0.005;
-    //   groupRef.current.rotation.y += 0.01;
-    //   groupRef.current.position.set(posx, 0, posy);
-    //   groupRef.current.position.set(posx, 0, posy);
+      groupRef.current.rotation.y += 0.002;  
+      groupRef.current.rotation.x += 0.002;  
     }
   });
 
@@ -143,7 +142,7 @@ const RotatingGroup = ({text, zero, one, two, three, four, five, six, seven, eig
   );
 };
 
-const Grid = ({avatars}) => {
+const Grid = ({avatars, vh, vw}) => {
   const [rotate, setRotate] = useState(0);
   
   // useEffect(() => {
@@ -189,13 +188,13 @@ const Grid = ({avatars}) => {
       <div className = "CanvasContainer">
       {avatars.map((avatar, index) => (
         <div>
-      <Canvas style={{ background: "black", width: "20vw", height: "33vh"}} camera={{position: [10,1,10], fov: 60}}>
+      <Canvas style={{ background: "black", width: vw, height: vh}} camera={{position: [10,2,10], fov: 70}}>
         <ambientLight intensity={0.1}/>
         <directionalLight position={[.5,.5,.5]} intensity={20} color={"pink"}/>
                 
                 <RotatingGroup posx={0} posy={0} posz={0} text={avatar.text} zero={avatar.zero} one={avatar.one} two={avatar.two} three={avatar.three} four={avatar.four} five={avatar.five} six={avatar.six} seven={avatar.seven} eight={avatar.eight}/>
         {/* <OrbitControls/> */}
-        <Label posx={1} posy={-2} posz={1} text={avatar.text}/>
+        <Label posx={2} posy={-2} posz={1} text={avatar.text}/>
        
       </Canvas>
       <div>

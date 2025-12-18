@@ -1,57 +1,57 @@
 [
     {
-      "section": "cohesion",
-      "question": "If you are designing a bridge, would it be a sturdy steel structure connecting commmunities or whimsical suspension bridge inspiring unity through creativity?",
-      "lower": "sturdy steel structure",
-      "higher": "whimsical suspension bridge"
+      "section": "CO-llaboration",
+      "question": "How do you feel about A.I.?",
+      "lower": "Hate",
+      "higher": "Love"
     },
     {
-        "section": " ",
+      "section": "CO-llaboration",
+      "question": "What is a good team size?",
+      "lower": "Solo, just myself",
+      "higher": "20 people, a party"
+    },
+    {
+      "section": "CO-llaboration",
+      "question": "If your design team were a superhero duo, would you be Iron Man and J.A.R.V.I.S (futuristic human-AI partnership) or Batman and Robin (classic human teamwork)?",
+      "lower": "Iron Man and J.A.R.V.I.S",
+      "higher": "Batman and Robin"
+    },
+    {
+      "section": "CO-hesion",
+      "question": "I like to work on problems through . . .",
+      "lower": "Qualitative methods (ethnography, etc.)",
+      "higher": "Quantitative (behavioral studies, etc.)"
+    },
+    {
+        "section": "CO-hesion",
         "question": "When designing for accessibility, do you prefer a universal design approach that fits all or a customized solutions approach?",
-        "lower": "universal design",
-        "higher": "customized solutions"
+        "lower": "Universal design",
+        "higher": "Customized solutions"
       },
       {
-        "section": " ",
-        "question": "When designing for accessibility, do you prefer a universal design approach that fits all or a customized solutions approach?",
-        "lower": "universal design",
-        "higher": "customized solutions"
+      
+        "section": "CO-hesion",
+        "question": "If you are designing a bridge, would it be a sturdy steel structure connecting commmunities or whimsical suspension bridge inspiring unity through creativity?",
+        "lower": "Sturdy steel structure",
+        "higher": "Whimsical suspension bridge"
       },
       {
-        "section": "collaboration",
-        "question": "If your design team were a superhero duo, would you be Iron Man and J.A.R.V.I.S (futuristic human-AI partnership), Batman and Robin (classic human teamwork), or some of both?",
-        "lower": "Iron Man and J.A.R.V.I.S",
-        "higher": "Batman and Robin"
+        "section": "CO-existence",
+        "question": "Do you prefer being near the ocean or the mountains?",
+        "lower": "Ocean",
+        "higher": "Mountains"
       },
       {
-        "section": " ",
-        "question": "What is a good team size for you? Slide through the range from working solo (1) to a team of 20 members.",
-        "lower": "1 (just myself)",
-        "higher": "20 (a party)"
-      },
-
-      {
-        "section": " ",
-        "question": "What is a good team size for you? Slide through the range from working solo (1) to a team of 20 members.",
-        "lower": "1 (just myself)",
-        "higher": "20 (a party)"
-      },
-      {
-        "section": "coexistence",
-        "question": "In the fight against climate change, are you a Green warrior leading the charge, a Quiet innovator making a difference behind the scenes, or some of both?",
+        "section": "CO-existence",
+        "question": "In the fight against climate change, are you a Green warrior leading the charge or a quiet innovator making a difference behind the scenes?",
         "lower": "Green warrior",
         "higher": "Quiet innovator"
       },
       {
-        "section": "",
-        "question": "In the fight against climate change, are you a Green warrior leading the charge, a Quiet innovator making a difference behind the scenes, or some of both?",
-        "lower": "Green warrior",
-        "higher": "Quiet innovator"
-      },
-      {
-        "section": " ",
-        "question": "When imagining a sustainable future, do you prefer innovative technology-driven solutions, a return to traditional and natural methods, or some of both?",
-        "lower": "innovative",
-        "higher": "traditional"
+        "section": "CO-existence",
+        "question": "When imagining a sustainable future, do you prefer innovative technology-driven solutions or a return to natural methods?",
+        "lower": "Innovative tech solutions",
+        "higher": "Natural methods"
       }
     ]

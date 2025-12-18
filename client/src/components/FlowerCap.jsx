@@ -36,10 +36,14 @@ const CapPetal = ({ position, rotation, bevelThickness, bevelSize}) => {
     //     </mesh>
     // );
 
+    console.log("bevel" + bevelThickness);
+    console.log((bevelThickness + 20)/25 - 1);
 
+    const colors = ["#8A26F3", "#FC0FC0", "#00FF75", "#FFFE00"];
+    const calculatedColor=colors[Math.floor((bevelThickness + 20)/25 - 1)];
     const petalGeometry = useMemo(() => new THREE.ExtrudeGeometry(petalShape, extrudeSettings), [petalShape, extrudeSettings]);
     const petalMaterial = useMemo(() => new THREE.MeshStandardMaterial({
-        color: '#FC0FC0',
+        color: calculatedColor,
         metalness: '1',
         roughness: '0.9',
         side: THREE.DoubleSide,
@@ -54,6 +58,9 @@ const CapPetal = ({ position, rotation, bevelThickness, bevelSize}) => {
 };
 
 const FlowerCap = ({ posx=0, posy=0, posz=0, numPetals = 8, petalRotation = 33, bevelThickness = 0.4, bevelSize = 0.4}) => {
+    // if (numPetals > 15) {
+    //     numPetals = 15;
+    // }
 
     const { elevation } = useElevation();
 
