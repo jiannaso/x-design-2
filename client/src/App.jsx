@@ -23,6 +23,7 @@ import { colorToRgba } from "@react-spring/shared"
 import Flower from "./components/flower"
 import Garden from "./components/garden"
 import Grid from "./components/grid"
+import About from "./components/About"
 
 const App = ()  => {
     // const isDesktop = this.state.isDesktop;
@@ -66,6 +67,7 @@ const App = ()  => {
     const [nickname, setNickname] = useState(false);
 
     const [displayedflowers, setDisplayedflowers] = useState(0);
+    const [aboutVisible, setAboutVisible] = useState(false);
     
   useEffect(() => {
     onValue(ref(db, `avatars/`), DataSnapshot => {
@@ -177,12 +179,16 @@ const App = ()  => {
           setCohesion(true);
         }}
           > get planting </button>
-          <button onClick={() => {
+        <button onClick={() => {
           setLandingVisible(false);
           setCanvasVisible(true);
         }}
           > see garden </button>
-      {/* </div> */}
+        <button onClick={() => {
+          setLandingVisible(false);
+          setAboutVisible(true);
+        }}
+          > about </button>
       </div>
       
     </div>
@@ -373,6 +379,10 @@ const App = ()  => {
      }}> visit the garden </button>
     <Flower text={text} zero={zero} one={one * 5} two={two * 5} three={three * 5} four={four} five={five * 5} six={six * 5} seven={seven * 5} eight={eight * 5}/>
     {/* <h1 class = "sectionText" style={{color: "white"}}> Hi {text}</h1> */}
+    <button class="floating" onClick={() => {
+       setAvatarVisible(false);
+       setAboutVisible(true);
+     }} style={{ top: "40px", right: "40px", left: "auto" }}> about </button>
     
     </div>
     : null}
@@ -401,7 +411,7 @@ const App = ()  => {
 
       <h3 style={{color: "gray", margin: "auto"}}>{1+15*(displayedflowers)} - {15*(displayedflowers+1)} of {avatars.length} flowers</h3>
 
-<     button class="view-flowers" onClick={() => {
+      <button class="view-flowers" onClick={() => {
         if(displayedflowers < avatars.length / 15 - 1) {
           let next = displayedflowers + 1;
           setDisplayedflowers(next);
@@ -425,6 +435,10 @@ const App = ()  => {
 
       }
    
+      <button class="floating" onClick={() => {
+        setCanvasVisible(false);
+        setAboutVisible(true);
+      }} style={{ top: "40px", right: "40px", left: "auto" }}> about </button>
 
       {/* <button class="floating" onClick={() => {
         // setQuestionsVisible(false);
@@ -434,6 +448,15 @@ const App = ()  => {
       }}> refresh </button>
      */}
     </div>
+    : null
+    }
+
+    {/* SCREEN5: about page */}
+    {aboutVisible == true ?
+    <About onBack={() => {
+      setAboutVisible(false);
+      setLandingVisible(true);
+    }} />
     : null
     }
   </div>
